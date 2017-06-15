@@ -9,10 +9,10 @@ var gulp = require('gulp'), //基础库
     concat = require('gulp-concat'), //合并文件
     clean = require('gulp-clean'), //清空文件夹
     plumber = require("gulp-plumber"),
-    autoprefixer = require('gulp-autoprefixer'),
-    del = require('del'),
     browserSync = require('browser-sync').create();
+
 var reload = browserSync.reload;
+
 gulp.task('server', function() {
     browserSync.init({
         // proxy:'http://localhost:3000/index.html',
@@ -21,9 +21,7 @@ gulp.task('server', function() {
         }
     });
 });
-gulp.task('del', function(){
-    del(['dist/css/style.scss']);
-});
+
 //HTML处理
 gulp.task('html', function() {
     var htmlSrc = 'src/**/*.html',
@@ -34,17 +32,6 @@ gulp.task('html', function() {
         .pipe(gulp.dest('dist'))
         .pipe(reload({ stream: true }));
 });
-gulp.task('prefixer', function() {
-        var cssSrc = 'src/scss/*',
-            cssDst = 'dist/css';
-        gulp.src(cssSrc)
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions', 'Android >= 4.0'],
-                cascade: true,
-                remove: true
-            }))
-            .pipe(gulp.dest(cssDst))
-    })
     // 样式处理
 gulp.task('sass', function() {
     var cssSrc = 'src/scss/*',
@@ -94,8 +81,8 @@ gulp.task('clean', function() {
 });
 
 // 默认任务 清空图片、样式、js并重建 运行语句 gulp
-gulp.task('default', ['clean'], function() {
-    gulp.start('server', 'images', 'html', 'sass','js', 'watch');
+gulp.task('default', ['clean' ,'server'], function() {
+    gulp.start('images', 'html', 'sass','js', 'watch');
 });
 // 监听任务 运行语句 gulp watch
 gulp.task('watch', function() {

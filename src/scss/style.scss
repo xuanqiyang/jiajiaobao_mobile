@@ -22,19 +22,25 @@ a {
 }
 
 .content {
-    margin-bottom: 1.066667rem;
+    margin-bottom: 2rem;
 }
 
 $blue:#0095FF;
 $red:#EF4746;
 $yellow:#F18C39;
+.banner {
+    img {
+        width: 100%;
+    }
+}
+
 @mixin top-nav($bgColor, $color) {
     font-size: 0.346667rem;
     display: -webkit-box;
     display: -ms-box;
     position: relative;
-    line-height: 1.133333rem;
-    height: 1.133333rem;
+    line-height: 1.3rem;
+    height: 1.3rem;
     background-color: $bgColor;
     a {
         font-size: 0.4rem;
@@ -69,12 +75,11 @@ $yellow:#F18C39;
         h1 {
             color: #666;
         }
-    }
-}
-
-.banner {
-    img {
-        width: 100%;
+        .search-bar-r {
+            .search {
+                width: 7rem;
+            }
+        }
     }
 }
 
@@ -82,11 +87,41 @@ $yellow:#F18C39;
     @include top-nav(#fff, $blue);
     border-bottom: 1px solid $blue;
 }
+.top-nav-link{
+    font-size: 0.346667rem;
+    line-height: 1.3rem;
+    height: 1.3rem;
+    .sub-nav-3{
+        width:94%;
+        padding: 0 3%;
+        .nav-item{
+            line-height: 1.3rem;
+            height: 1.3rem;
+            width: 30%;
+            margin-right: 5%;
+            color:#666;
+            font-size: 0.4rem;  
+            border-bottom: 1px solid #fff;
+            border-right: none;
+            &:last-child{
+                margin-right: 0;
+            }
+            &:active{
+            color:$blue;
+            border-bottom: 1px solid $blue;                
+            }
+        }
 
+        .current{
+            color:$blue;
+            border-bottom: 1px solid $blue;
+        }
+    }
+}
 .top-nav-index {
     @include top-nav($blue, #fff);
     .search-bar {
-        margin: 0.266667rem auto 0rem;
+        margin: 0.3rem auto 0rem;
         overflow: hidden;
         position: relative;
         .search {
@@ -342,7 +377,6 @@ $yellow:#F18C39;
 @mixin sub-nav($bdColor:$blue) {
     width: 100%;
     overflow: hidden;
-    margin: 0.2rem 0;
     background-color: #fff;
     .nav-item {
         float: left;
@@ -369,19 +403,21 @@ $yellow:#F18C39;
 }
 
 .sub-nav-5 {
-    @include sub-nav($red);
+    @include sub-nav($blue);
     .nav-item {
         width: 20%;
     }
 }
+
 .sub-nav-4 {
-    @include sub-nav($red);
+    @include sub-nav($blue);
     .nav-item {
         width: 25%;
     }
 }
+
 .sub-nav-3 {
-    @include sub-nav($red);
+    @include sub-nav($blue);
     .nav-item {
         width: 100 / 3 * 1%;
     }
@@ -462,7 +498,8 @@ $yellow:#F18C39;
 }
 
 .category-items {
-    padding: 0.266667rem;
+    padding: .266667rem .266667rem 0 .266667rem;
+    background-color: #fbfbfb;
     .items {
         font-size: 0.24rem;
         .item {
@@ -494,6 +531,16 @@ $yellow:#F18C39;
                         .grade {
                             color: $red;
                         }
+                        .visit-num{
+                            color:$red;
+                        }
+                        .price{
+                            color:$red;
+                        }
+                        .apply-num{
+                            color:$red;
+                        }
+
                     }
                 }
             }
@@ -545,6 +592,8 @@ $yellow:#F18C39;
 }
 
 .course-items {
+    padding: .266667rem .266667rem 0 .266667rem;
+    background-color: #fbfbfb;
     .read-more {
         text-align: center;
         display: block;
@@ -556,11 +605,11 @@ $yellow:#F18C39;
         font-size: 0.24rem;
     }
     .item {
-        border-bottom: 1px solid #eee;
-        padding: 0.333333rem;
+        padding: 0.2rem;
         background-color: #fff;
+        margin-bottom: 0.2rem;
         &:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
         .item-info {
             overflow: hidden;
@@ -575,7 +624,7 @@ $yellow:#F18C39;
             }
             .item-detail {
                 float: left;
-                width: 4.866667rem;
+                width: 5.3rem;
                 margin-left: 0.2rem;
                 p {
                     line-height: 1.5em;
@@ -610,7 +659,7 @@ $yellow:#F18C39;
                 }
                 .course-name {
                     line-height: 1.5em;
-                    width: 4.8rem;
+                    width: 5.3rem;
                     font-size: 0.466667rem;
                     white-space: nowrap;
                     text-overflow: ellipsis;
@@ -632,9 +681,10 @@ $yellow:#F18C39;
 .items-lr {
     overflow: hidden;
     .item {
+        background-color: #fff;
         float: left;
         width: 48%;
-        margin-bottom: 0.266667rem;
+        margin-top: 0.266667rem;
         .course-type {
             border: 1px solid #{$blue};
             border-radius: 0.066667rem;
@@ -651,6 +701,7 @@ $yellow:#F18C39;
             }
         }
         .item-caption {
+            padding:.133333rem;
             p {
                 line-height: 1.5em;
                 width: 4.266667rem;
@@ -835,7 +886,11 @@ $yellow:#F18C39;
 }
 
 .info-items {
-    background-color: #fff;
+    background-color: #fbfbfb;
+    padding: .266667rem .266667rem 0;
+    .box-item {
+        background-color: #fff;
+    }
     .sub-nav {
         .nav-item {
             border-bottom: 1px solid #fff;
@@ -853,7 +908,7 @@ $yellow:#F18C39;
 
 .detail-info {
     section {
-        padding: .1rem 0.333333rem;
+        padding: 0.333333rem;
         display: -webkei-flex;
         display: flex;
         color: #666;
@@ -887,7 +942,7 @@ $yellow:#F18C39;
                 width: 50%;
                 display: inline-block;
             }
-            .order-date {
+            .date {
                 width: 50%;
                 display: inline-block;
                 text-align: right;
@@ -906,7 +961,7 @@ $yellow:#F18C39;
 .suc-ex {
     section {
         color: #666;
-        padding: .1rem 0.333333rem;
+        padding: 0.333333rem;
         border-bottom: 1px solid #eee;
         p {
             line-height: 1.5em;
@@ -1071,32 +1126,111 @@ $yellow:#F18C39;
         }
     }
 }
+
 .video {
-    width:100%;
+    width: 100%;
     .vjs-default-skin {
         width: 100%;
         height: 6.266667rem;
     }
-    .vjs-poster{
+    .vjs-poster {
         background-size: 100%;
     }
 }
-.star-rated{
+
+@mixin bd-bot {
+    border-bottom: 1px solid #eee;
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.comment-items {
+    .item {
+        padding: 0.2rem;
+        overflow: hidden;
+        @include bd-bot;
+        .item-pct {
+            margin: 0 0.266667rem;
+            width: 1.333333rem;
+            height: 1.333333rem;
+            float: left;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .item-detail {
+            float: left;
+            width: 10rem - 1.333333rem -0.533333rem-0.533333rem;
+            .user-rated {
+                overflow: hidden;
+                .user-name {
+                    line-height: .35rem;
+                    margin-right: 0.2rem;
+                    float: left;
+                }
+                .date {
+                    line-height: .35rem;
+                    float: right;
+                }
+                .rated {
+                    float: left;
+                    line-height: .35rem;
+                }
+            }
+        }
+    }
+    .course-name {
+        color: #666;
+    }
+    p {
+        line-height: 1.5em;
+    }
+}
+
+.star-rated {
     background-image: url(../images/starky.png);
-    background-repeat:  repeat-x;
+    background-repeat: repeat-x;
     background-size: 0.333333rem 0.333333rem;
-    width:1.615rem;
+    width: 1.615rem;
     height: 0.35rem;
     position: relative;
 }
-.star-rated span{ 
-    background-image:url(../images/starsy.png);
-    background-repeat:  repeat-x;
+
+.star-rated span {
+    background-image: url(../images/starsy.png);
+    background-repeat: repeat-x;
     background-size: 0.333333rem 0.333333rem;
     height: 0.35rem;
-    width:1.615rem;
+    width: 1.615rem;
     position: absolute;
 }
+
+.course-nav {
+    padding: 0.266667rem;
+    .nav-item {
+        font-size: 0.346667rem;
+        padding: 0.053333rem 0.16rem;
+        margin-right: 0.266667rem;
+    }
+    .cut-line {
+        color: $red;
+    }
+    .current {
+        background-color: $red;
+        color: #fff;
+    }
+}
+
+.all-subjects {
+    font-size: 0.346667rem;
+    background-color: #eee;
+    line-height: 0.933333rem;
+    padding-left: 0.2rem;
+    display: block;
+}
+
 .fn-clear:after {
     visibility: hidden;
     display: block;

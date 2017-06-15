@@ -192,6 +192,6 @@ function scoreFun (object, opts){
 
 $(".rated span").each(function(index, element) {
     var num = $(this).attr("tip");
-    var www = num * 2 * 11 / 75+ "rem";
+    var www = num * 2 * 12 / 75+ "rem";
     $(this).css("width", www);
 })
