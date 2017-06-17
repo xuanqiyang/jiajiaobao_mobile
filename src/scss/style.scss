@@ -15,6 +15,10 @@ a {
     color: #666;
 }
 
+p {
+    color: #333;
+}
+
 .container {
     max-width: 750px;
     margin: 0 auto;
@@ -451,9 +455,11 @@ $yellow:#F18C39;
         }
     }
 }
-.color-red{
-    color:$red;
+
+.color-red {
+    color: $red;
 }
+
 .f-organ {
     .title {
         &:before {
@@ -505,89 +511,89 @@ $yellow:#F18C39;
     background-color: #fbfbfb;
     .items {
         font-size: 0.24rem;
+        .item-info {
+            overflow: hidden;
+            padding: 0.133333rem;
+            .item-pct {
+                float: left;
+                width: 2.666667rem;
+                height: 2.666667rem;
+                img {
+                    width: 100%;
+                }
+            }
+            .item-detail {
+                float: left;
+                margin-left: 0.266667rem;
+                h6 {
+                    font-size: 0.466667rem;
+                }
+                p {
+                    margin: 0.133333rem 0;
+                    span {
+                        display: inline-block;
+                    }
+                    .grade {
+                        color: $red;
+                    }
+                    .visit-num {
+                        color: $red;
+                    }
+                    .price {
+                        color: $red;
+                    }
+                    .apply-num {
+                        color: $red;
+                    }
+                }
+            }
+        }
         .item {
             margin: 0.2rem 0;
             border: 1px solid #eee;
             background-color: #fff;
-            .item-info {
-                overflow: hidden;
-                padding: 0.133333rem;
-                .item-pct {
-                    float: left;
-                    width: 2.666667rem;
-                    height: 2.666667rem;
-                    img {
-                        width: 100%;
-                    }
-                }
-                .item-detail {
-                    float: left;
-                    margin-left: 0.266667rem;
-                    h6 {
-                        font-size: 0.466667rem;
-                    }
-                    p {
-                        margin: 0.133333rem 0;
-                        span {
-                            display: inline-block;
-                        }
-                        .grade {
-                            color: $red;
-                        }
-                        .visit-num {
-                            color: $red;
-                        }
-                        .price {
-                            color: $red;
-                        }
-                        .apply-num {
-                            color: $red;
-                        }
-                    }
+        }
+        .course {
+            overflow: hidden;
+            padding: 0.133333rem;
+            border-top: 1px solid #eee;
+            .course-type {
+                float: left;
+                width: 2.666667rem;
+                text-align: right;
+                .grey {
+                    display: inline-block;
                 }
             }
-            .course {
+            .course-info {
+                float: left;
+                margin-left: 0.266667rem;
+            }
+            .course-sub {
+                display: -webkit-flex;
+                display: flex;
+                span {
+                    line-height: 2em;
+                }
+            }
+            .study-num {
+                display: block;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                text-align: right;
+            }
+            .price {
+                color: $red;
+            }
+            .course-name {
+                width: 5.6rem;
+                font-size: 0.333333rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
                 overflow: hidden;
-                padding: 0.133333rem;
-                border-top: 1px solid #eee;
-                .course-type {
-                    float: left;
-                    width: 2.666667rem;
-                    text-align: right;
-                    .grey {
-                        display: inline-block;
-                    }
-                }
-                .course-info {
-                    float: left;
-                    margin-left: 0.266667rem;
-                    .course-sub {
-                        display: -webkit-flex;
-                        display: flex;
-                        span {
-                            line-height: 2em;
-                        }
-                        .study-num {
-                            display: block;
-                            -webkit-box-flex: 1;
-                            -webkit-flex: 1;
-                            -moz-box-flex: 1;
-                            -ms-flex: 1;
-                            flex: 1;
-                            text-align: right;
-                        }
-                        .price {
-                            color: $red;
-                        }
-                    }
-                    .course-name {
-                        width: 5.6rem;
-                        font-size: 0.333333rem;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                    }
-                }
             }
         }
     }
@@ -615,58 +621,58 @@ $yellow:#F18C39;
         }
         .item-info {
             overflow: hidden;
-            .item-pct {
-                float: left;
-                width: 3.333333rem;
-                height: 2.266667rem;
-                img {
-                    width: 100%;
-                    height: 100%;
+        }
+        .item-pct {
+            float: left;
+            width: 3.333333rem;
+            height: 2.266667rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .item-detail {
+            float: left;
+            width: 5.3rem;
+            margin-left: 0.2rem;
+            p {
+                line-height: 1.5em;
+                &:before {
+                    margin-right: 5px;
                 }
             }
-            .item-detail {
-                float: left;
+            .play-num,
+            .price,
+            .study-num {
+                color: $red;
+            }
+            .icon-26 {
+                display: -webkit-flex;
+                display: flex;
+            }
+            .price {
+                display: block;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                text-align: right;
+            }
+            .course-type {
+                border: 1px solid $blue;
+                color: $blue;
+                font-size: .3rem;
+                margin-right: 0.2rem;
+                padding: 0 0.1rem;
+            }
+            .course-name {
+                line-height: 1.5em;
                 width: 5.3rem;
-                margin-left: 0.2rem;
-                p {
-                    line-height: 1.5em;
-                    &:before {
-                        margin-right: 5px;
-                    }
-                }
-                .play-num,
-                .price,
-                .study-num {
-                    color: $red;
-                }
-                .icon-26 {
-                    display: -webkit-flex;
-                    display: flex;
-                }
-                .price {
-                    display: block;
-                    -webkit-box-flex: 1;
-                    -webkit-flex: 1;
-                    -moz-box-flex: 1;
-                    -ms-flex: 1;
-                    flex: 1;
-                    text-align: right;
-                }
-                .course-type {
-                    border: 1px solid $blue;
-                    color: $blue;
-                    font-size: .3rem;
-                    margin-right: 0.2rem;
-                    padding: 0 0.1rem;
-                }
-                .course-name {
-                    line-height: 1.5em;
-                    width: 5.3rem;
-                    font-size: 0.466667rem;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                }
+                font-size: 0.466667rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
             }
         }
     }
@@ -708,8 +714,28 @@ $yellow:#F18C39;
                 line-height: 1.5em;
                 width: 4.266667rem;
             }
+            .course-sub {
+                display: flex;
+                display: -webkit-flex;
+            }
+            .price {
+                color: $red;
+                text-align: right;
+                display: block;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
         }
     }
+}
+
+.recommend {
+    color: $blue;
+    text-align: center;
+    padding: 0.16rem 0;
 }
 
 .fn-ellipsis {
@@ -747,6 +773,26 @@ $yellow:#F18C39;
     }
 }
 
+.bot-nav-send {
+    @include bot-nav;
+    background-color: #eee;
+    line-height: 1.266667rem;
+    padding: 0 0.466667rem;
+    input {
+        height: 0.866667rem;
+        width: 7.666667rem;
+        background-color: #fff;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-right: 0.333333rem;
+    }
+    button {
+        border-radius: 5px;
+        color:#666;
+        height: 0.866667rem;
+    }
+}
+
 .bot-nav-2 {
     @include bot-nav;
     height: 1.133333rem;
@@ -755,6 +801,9 @@ $yellow:#F18C39;
         font-size: .4rem;
         background-color: #fff;
         color: #666;
+        &:before {
+            margin-right: 0.2rem;
+        }
         &:only-child {
             background-color: $red;
         }
@@ -1005,16 +1054,6 @@ $yellow:#F18C39;
         p {
             color: #666;
             line-height: 2em;
-            .order-num {
-                color: $red;
-                width: 50%;
-                display: inline-block;
-            }
-            .date {
-                width: 50%;
-                display: inline-block;
-                text-align: right;
-            }
         }
         .order-name {
             font-size: 0.293333rem;
@@ -1022,6 +1061,16 @@ $yellow:#F18C39;
         .order-success {
             text-align: right;
             color: $red;
+        }
+        .order-num {
+            color: $red;
+            width: 50%;
+            display: inline-block;
+        }
+        .date {
+            width: 50%;
+            display: inline-block;
+            text-align: right;
         }
     }
 }
@@ -1133,9 +1182,9 @@ $yellow:#F18C39;
             span {
                 display: inline-block;
             }
-            .grade {
-                color: $red;
-            }
+        }
+        .grade {
+            color: $red;
         }
     }
 }
@@ -1158,13 +1207,13 @@ $yellow:#F18C39;
     }
 }
 
-.comment-items {
+.rate-items {
     .item {
         padding: 0.2rem;
         overflow: hidden;
         @include bd-bot;
         .item-pct {
-            margin: 0 0.266667rem;
+            margin-right: 0.2rem;
             width: 1.333333rem;
             height: 1.333333rem;
             float: left;
@@ -1175,23 +1224,24 @@ $yellow:#F18C39;
         }
         .item-detail {
             float: left;
-            width: 10rem - 1.333333rem -0.533333rem-0.533333rem;
-            .user-rated {
-                overflow: hidden;
-                .user-name {
-                    line-height: .35rem;
-                    margin-right: 0.2rem;
-                    float: left;
-                }
-                .date {
-                    line-height: .35rem;
-                    float: right;
-                }
-                .rated {
-                    float: left;
-                    line-height: .35rem;
-                }
+            width: 7.333333rem;
+        }
+        .user-rated {
+            overflow: hidden;
+            .user-name {
+                line-height: .35rem;
+                margin-right: 0.2rem;
+                float: left;
             }
+            .rated {
+                float: left;
+                line-height: .35rem;
+            }
+        }
+        .date {
+            line-height: .35rem;
+            float: right;
+            color: #666;
         }
     }
     .course-name {
@@ -1256,6 +1306,228 @@ $yellow:#F18C39;
     }
 }
 
+.group-info {
+    overflow: hidden;
+    padding: .3rem 0.4rem;
+    background-color: #fbfbfb;
+    color: #333;
+    .item-pct {
+        width: 1.333333rem;
+        height: 1.333333rem;
+        float: left;
+        img {
+            width: 100%;
+        }
+    }
+    .item-detail {
+        float: left;
+        margin-left: 0.266667rem;
+        h6 {
+            font-size: 0.466667rem;
+        }
+        p {
+            line-height: 1.5em;
+        }
+    }
+    .publish {
+        float: right;
+        padding: .3rem 0;
+        .btn {
+            display: inline-block;
+        }
+    }
+}
+
+.topcis-list {
+    li {
+        border-bottom: 1px solid #eee;
+        padding: .3rem 0.4rem;
+        p {
+            padding: 0.1rem 0;
+        }
+        .topci-title {
+            display: inline-block;
+            font-size: 16px;
+            width: 6.533333rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .date {
+            float: right;
+            color: #666;
+        }
+        .topci-content {
+            font-size: 0.24rem;
+            color: #666;
+            width: 6.533333rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .comment-num {
+            color: #666;
+            margin-right: 0.4rem;
+            &:before {
+                font-size: 0.3rem;
+                margin-right: 0.16rem;
+                vertical-align: bottom;
+            }
+        }
+        .agree-num {
+            &:before {
+                vertical-align: bottom;
+                font-size: 0.3rem;
+                margin-right: 0.16rem;
+            }
+            color:#666;
+        }
+    }
+}
+
+.btn {
+    padding: 0.2rem 0.333333rem;
+    font-size: 0.266667rem;
+}
+
+.red-btn {
+    background-color: $red;
+    color: #fff;
+}
+
+.sub-nav-c {
+    text-align: center;
+    .nav-item {
+        font-size: .4rem;
+        width: 2.0rem;
+        margin-right: 0.666667rem;
+        padding: 0.333333rem 0;
+        display: inline-block;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .current {
+        border-bottom: 1px solid $blue;
+        color: $blue;
+    }
+}
+
+.topics-group {
+    .items {
+        .item {
+            padding: .3rem 0.4rem;
+            border-top: 1px solid #eee;
+        }
+    }
+    .item-info {
+        overflow: hidden;
+        .item-pct {
+            width: 1.333333rem;
+            height: 1.333333rem;
+            float: left;
+            img {
+                width: 100%;
+            }
+        }
+        .item-detail {
+            float: left;
+            margin-left: 0.266667rem;
+            h6 {
+                font-size: 0.466667rem;
+            }
+            p {
+                line-height: 1.5em;
+            }
+        }
+    }
+}
+
+.comment-list {
+    padding:0 0.333333rem;
+    background-color: #fbfbfb;
+}
+
+.comment {
+    background-color: #fff;
+    margin-top: 0.4rem;
+    border-radius: 5px;
+    .comment-hd {
+        padding: 0.2rem;
+        display: -webkit-flex;
+        display: flex;
+        img {
+            width: 0.666667rem;
+            height: 0.666667rem;
+            vertical-align: middle;
+            margin-right: 0.333333rem;
+        }
+        .user-name {
+            color: #666;
+            font-size: 0.32rem;
+            -webkit-box-flex: 1;
+            flex: 1;
+            line-height: 0.666667rem;
+        }
+        .date {
+            color: #666;
+            display: inline-block;
+            text-align: right;
+            -webkit-box-flex: 1;
+            flex: 1;
+            line-height: 0.666667rem;
+            font-size: 0.32rem;
+        }
+    }
+    .comment-cnt {
+        padding: 0 0.2rem .2rem;
+        line-height: 1.5em;
+    }
+}
+
+.topic-article {
+    header {
+        padding: 0.3rem 0.4rem;
+        background-color: #eee;
+        display: -webkit-flex;
+        display: flex;
+        img {
+            width: 0.666667rem;
+            height: 0.666667rem;
+            vertical-align: middle;
+            margin: 0 0.333333rem;
+        }
+        .user-name {
+            color: #666;
+            font-size: 0.32rem;
+            -webkit-box-flex: 1;
+            flex: 1;
+            line-height: 0.666667rem;
+        }
+        .date {
+            color: #666;
+            display: inline-block;
+            text-align: right;
+            -webkit-box-flex: 1;
+            flex: 1;
+            line-height: 0.666667rem;
+            font-size: 0.32rem;
+        }
+    }
+    section {
+        padding: 0.4rem;
+        h2 {
+            font-size: 16px;
+            color: #333;
+        }
+        p {
+            font-size: 0.186667rem;
+            padding-top: 0.266667rem;
+            line-height: 1.5em;
+        }
+    }
+}
+
 .all-subjects {
     font-size: 0.346667rem;
     background-color: #eee;
@@ -1263,18 +1535,20 @@ $yellow:#F18C39;
     padding-left: 0.2rem;
     display: block;
 }
-.go-rate{
-    color:#999;
- font-size: 0.346667rem;
+
+.go-rate {
+    color: #999;
+    font-size: 0.346667rem;
     background-color: #eee;
     line-height: 0.933333rem;
     padding-left: 0.2rem;
-    display: block; 
+    display: block;
     text-indent: 5em;
-    .icon-28{
+    .icon-28 {
         margin-left: 0.2rem;
-    }  
+    }
 }
+
 .fn-clear:after {
     visibility: hidden;
     display: block;
@@ -1283,22 +1557,24 @@ $yellow:#F18C39;
     clear: both;
     height: 0;
 }
-.none{
+
+.none {
     display: block;
     width: 100%;
     background-color: #fff;
-    figcaption{
-        color:#999;
+    figcaption {
+        color: #999;
         font-size: 0.266667rem;
         text-align: center;
         padding: 0.5rem 0;
     }
-    img{
+    img {
         display: block;
         margin: 0 auto;
         width: 60%;
     }
 }
+
 .fn-clear {
     *zoom: 1;
 }
