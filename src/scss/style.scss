@@ -19,6 +19,20 @@ p {
     color: #333;
 }
 
+textarea {
+    border: 0;
+    border-radius: 5px;
+    color: #666;
+    overflow-y: hidden;
+    max-height: 3.333333rem;
+}
+
+textarea:focus,
+textarea:active {
+    border: 0;
+    outline: 0;
+}
+
 .container {
     max-width: 750px;
     margin: 0 auto;
@@ -27,6 +41,10 @@ p {
 
 .content {
     margin-bottom: 2rem;
+}
+
+.bg-gray {
+    background-color: #fbfbfb;
 }
 
 $blue:#0095FF;
@@ -764,6 +782,7 @@ $yellow:#F18C39;
     -ms-flex-align: center;
     justify-content: space-between;
     align-content: center;
+    .button-nav,
     a {
         -webkit-box-flex: 1;
         -moz-box-flex: 1;
@@ -801,7 +820,7 @@ $yellow:#F18C39;
             background: #fafafa;
             border: 1px solid #ddd;
         }
-        input[type="file"]{
+        input[type="file"] {
             height: .8rem;
         }
     }
@@ -863,6 +882,7 @@ $yellow:#F18C39;
         font-size: .4rem;
         background-color: #fff;
         color: #666;
+        display: inline-block;
         &:before {
             margin-right: 0.2rem;
         }
@@ -1596,6 +1616,14 @@ $yellow:#F18C39;
     background-color: #fbfbfb;
 }
 
+.panel-padding {
+    padding: 0.333333rem;
+}
+
+.panel-margin {
+    margin: 0.333333rem;
+}
+
 .portrait-name-date {
     padding: 0.2rem .4rem;
     display: -webkit-flex;
@@ -1808,6 +1836,153 @@ $yellow:#F18C39;
         background: #eee;
         border-color: #ccc;
         text-decoration: none
+    }
+}
+
+#ask {
+    padding-top: 0.333333rem;
+    textarea {
+        width: 9.333333rem;
+        height: 3.333333rem;
+    }
+}
+
+.user-menu {
+    background-color: #fbfbfb;
+    .icon-more {
+        position: relative;
+        &:after {
+            position: absolute;
+            right: 0.45rem;
+            top: 41%;
+            display: block;
+        }
+    }
+    header {
+        background-color: #fff;
+    }
+    section {
+        margin-top: 0.4rem;
+        background-color: #fff;
+        font-size: 0.266667rem;
+    }
+    .menu-item {
+        padding: 0.333333rem;
+        display: block;
+        overflow: hidden;
+        border-bottom: 1px solid #eee;
+        &:last-child {
+            border-bottom: 0;
+        }
+        &:before {
+            margin-right: 0.666667rem;
+            font-size: 0.4rem;
+        }
+        .portrait {
+            float: left;
+            width: 1.733333rem;
+            height: 1.733333rem;
+            img {
+                border-radius: 1.333333rem;
+                width: 100%;
+            }
+        }
+        .base-info {
+            float: left;
+            margin-left: 0.333333rem;
+            h6 {
+                padding-top: 0.16rem;
+                font-size: 0.45rem;
+            }
+            p {
+                padding-top: 0.16rem;
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.more-app {
+    a {
+        padding: .333333rem 0;
+        text-align: center;
+        display: inline-block;
+        width: 100/3 * 1%;
+        &:before {
+            color: $blue;
+            vertical-align: middle;
+            font-size: 0.4rem;
+            margin-right: 0.16rem;
+        }
+    }
+}
+
+.upload-panel {
+    background-color: #eee;
+    padding-top: 0.333333rem;
+    margin: 0 0.333333rem;
+    height: 3.266667rem;
+    .ui-upload {
+        .icon-46 {
+            font-size: 1.306667rem;
+        }
+        input[type="file"] {
+            height: 2.266667rem;
+            width: 100%;
+        }
+        .icon-desc {
+            display: block;
+        }
+    }
+}
+
+.list {
+    .dd-padding {
+        padding: 0.333333rem;
+    }
+}
+
+.kv-line {
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    h6 {
+        position: absolute;
+        top:40%;
+        font-size: 14px;
+        margin-right: 0.333333rem;
+        width: 1.733333rem;
+        vertical-align: bottom;
+        white-space: nowrap;
+    }
+    .kv-v {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    .portrait {
+        img {
+        float: right;
+        width: 1.333333rem;
+        height: 1.333333rem;
+        border-radius: 1.333333rem;
+        }
+    }
+}
+
+.input-weak {
+    height: .7rem;
+    border-radius: 0.066667rem;
+    margin: -.15rem 0;
+    text-indent: .1rem;
+    line-height: 1;
+    font-size: .3rem;
+    &:focus {
+        background-color: #eee;
     }
 }
 

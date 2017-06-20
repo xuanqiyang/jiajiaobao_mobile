@@ -127,6 +127,9 @@
 .icon-28:before {
   content: "\e91b";
 }
+.icon-more:after{
+  content: "\e91b"; 
+}
 .icon-29:before {
   content: "\e91c";
   color: #09f;
