@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
     <meta content="telephone=no" name="format-detection" />
     <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+
     <title>个人资料</title>
 </head>
 
@@ -20,36 +22,120 @@
             </a>
         </div>
         <div class="nav-header">
-            <h1>评论</h1>
+            <h1>个人资料</h1>
         </div>
     </header>
     <div class="content">
         <form>
-            <dl class="list">
-                <dd class="dd-padding kv-line">
-                    <h6>
-                        用户昵称
-                    </h6>
-                    <input type="text" name="" class="kv-v input-weak">
+            <dl class="user-info">
+                <dd>
+                    <dl class="list">
+                        <dd class="dd-padding kv-line">
+                            <h6>用户昵称</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="输入您的昵称">
+                        </dd>
+                        <dd>
+                            <a class="kv-line dd-padding">
+                                <h6>用户头像</h6>
+                                <div class="portrait kv-v">
+                                    <img class="portrait" src="../images/portrait.jpg">
+                                </div>
+                            </a>
+                        </dd>
+                    </dl>
                 </dd>
-                <dd class="dd-padding kv-line">
-                    <h6>用户头像</h6>
-                    <div class="portrait kv-v">
-                        <img class="portrait" src="../images/portrait.jpg">
-                    </div>
+                <dd>
+                    <dl class="list">
+                        <dd class="dd-padding kv-line">
+                            <h6>授课科目</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="如小学一年级语文、数学等">
+                        </dd>
+                        <dd class="dd-padding kv-line">
+                            <h6>授课地址</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="输入您的地址">
+                        </dd>
+                        <dd class="dd-padding kv-line">
+                            <h6>辅导方式</h6>
+                            <button name="teaWay" id="picWay" class="kv-v input-weak" value="way1">学生上门</button>
+                        </dd>
+                    </dl>
                 </dd>
-                <dd></dd>
+                <dd>
+                    <dl class="list">
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">毕业院校</a>
+                        </dd>
+                        <dd class="dd-padding kv-line">
+                            <h6>性别</h6>
+                            <button id="picSex" name="sex" class="kv-v input-weak" value="way1">男</button>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">所获证书</a>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">成功案例</a>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">自我简介</a>
+                        </dd>
+                    </dl>
+                </dd>
+                <dd>
+                    <dl class="list">
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">课程信息</a>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">插班原则</a>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">退班原则</a>
+                        </dd>
+                    </dl>
+                </dd>
             </dl>
         </form>
     </div>
-    <footer class="bot-nav">
-        <a href="around/teachers.html"><span class="bot-icon icon-61"></span><p class="icon-desc">首页</p></a>
-        <a href="index.html"><span class="bot-icon icon-62"></span><p class="icon-desc">首页</p></a>
-        <a href="index.html" class="current"><span class="bot-icon icon-63"></span><p class="icon-desc">首页</p></a>
-        <a href="index.html"><span class="bot-icon icon-64"></span><p class="icon-desc">首页</p></a>
-        <a href="./home/user.html"><span class="bot-icon icon-65"></span><p class="icon-desc">首页</p></a>
-    </footer>
 </body>
 <script type="text/javascript" src="../js/flexible.js"></script>
-
+<script type="text/javascript" src="../js/lib/mui.min.js"></script>
+<script type="text/javascript" src="../js/lib/mui.picker.js"></script>
+<script type="text/javascript" src="../js/lib/mui.poppicker.js"></script>
+<script type="text/javascript">
+    var teaWay = new mui.PopPicker();
+    var sex = new mui.PopPicker();
+    teaWay.setData([{
+        value:"way1",
+        text:"学生上门"
+    },{
+        value:"way2",
+        text:"老师上门" 
+    },{
+        value:"way3",
+        text:"在线授课"
+    }])
+    sex.setData([{
+        value:"male",
+        text:"男"
+    },{
+        value:"female",
+        text:"女"
+    }])
+    var picWay = document.getElementById("picWay");
+    var picSex =  document.getElementById("picSex");
+    picWay.addEventListener("tap",function(event){
+        teaWay.show(function(items){
+          var result = items[0];
+           picWay.value = result.value;
+           picWay.innerText = result.text;
+        })
+    })
+    picSex.addEventListener("tap",function(event){
+        sex.show(function(items){
+           var result = items[0];
+           picSex.value = result.value;
+           picSex.innerText = result.text;
+        })
+    })
+</script>
 </html>
