@@ -1841,20 +1841,19 @@ $yellow:#F18C39;
 
 #ask {
     padding-top: 0.333333rem;
-    textarea {
-        width: 9.333333rem;
-        height: 3.333333rem;
-    }
 }
-
-.user-menu {
+.text-area{
+	width: 9.333333rem;
+  height: 3.333333rem;
+}
+.menu-list {
     background-color: #fbfbfb;
     .icon-more {
         position: relative;
         &:after {
             position: absolute;
             right: 0.45rem;
-            top: 41%;
+            top: 38%;
             display: block;
         }
     }
@@ -1863,16 +1862,21 @@ $yellow:#F18C39;
     }
     section {
         margin-top: 0.4rem;
-        background-color: #fff;
         font-size: 0.266667rem;
     }
     .menu-item {
+        background-color: #fff;
         padding: 0.333333rem;
         display: block;
         overflow: hidden;
         border-bottom: 1px solid #eee;
         &:last-child {
             border-bottom: 0;
+        }
+        .menu-exinfo{
+        	float: right;
+        	margin-right:0.7rem;
+        	color: $blue;
         }
         &:before {
             margin-right: 0.666667rem;
@@ -1918,11 +1922,13 @@ $yellow:#F18C39;
         }
     }
 }
-
+.tip{
+	line-height: 1.5em;
+	color: #666;
+}
 .upload-panel {
     background-color: #eee;
     padding-top: 0.333333rem;
-    margin: 0 0.333333rem;
     height: 3.266667rem;
     .ui-upload {
         .icon-46 {
@@ -2026,7 +2032,23 @@ $yellow:#F18C39;
     height: 0;
     position: absolute;
 }
-
+.wallet-panel{
+    .balance{
+        background-color: $blue;
+        text-align: center;
+        height: 3.466667rem;
+        h1{
+            color:#fff;
+            font-size: 0.72rem;
+            font-weight: bold;
+        }
+        .bill-details{
+            color:#fff;
+            padding: 0.133333rem 0.666667rem;
+            border: 1px solid #fff;
+        }
+    }
+}
 .mui-plus header.mui-bar {
     display: none
 }

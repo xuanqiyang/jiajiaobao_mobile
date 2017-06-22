@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>个人资料</title>
+</head>
+
+<body class="container">
+    <header class="top-nav">
+        <div class="nav-wrap-left">
+            <a href="index.html">
+                <span class="icon-27"></span>
+            </a>
+        </div>
+        <div class="nav-header">
+            <h1>个人资料</h1>
+        </div>
+    </header>
+    <div class="content">
+        <form>
+            <dl class="user-info">
+                <dd>
+                    <dl class="list">
+                        <dd class="dd-padding kv-line">
+                            <h6>用户昵称</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="输入您的昵称">
+                        </dd>
+                        <dd>
+                            <a class="kv-line dd-padding">
+                                <h6>用户头像</h6>
+                                <div class="portrait kv-v">
+                                    <img class="portrait" src="../images/portrait.jpg">
+                                </div>
+                            </a>
+                        </dd>
+                    </dl>
+                </dd>
+                <dd>
+                    <dl class="list">
+                        <dd class="dd-padding kv-line">
+                            <h6>求教科目</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="如小学一年级语文、数学等">
+                        </dd>
+                        <dd class="dd-padding kv-line">
+                            <h6>所在地址</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="输入您的地址">
+                        </dd>
+                        <dd class="dd-padding kv-line">
+                            <h6>授课时间</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="输入确切的时间段">
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">学院概况</a>
+                        </dd>
+                    </dl>
+                </dd>
+                <dd>
+                    <dl class="list">
+                        <dd class="dd-padding kv-line">
+                            <h6>性别</h6>
+                            <button id="picSex" name="sex" class="kv-v input-weak" value="way1">男</button>
+                        </dd>
+                        <dd class="dd-padding kv-line">
+                            <h6>课酬</h6>
+                            <input type="text" name="" class="kv-v input-weak" placeholder="如100元/小时或协商">
+                        </dd>
+                  <dd class="dd-padding kv-line">
+                            <h6>教师类型</h6>
+                            <button id="picId" name="id" class="kv-v input-weak" value="undergraduate">大学生</button>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">自我简介</a>
+                        </dd>
+                    </dl>
+                </dd>
+                <dd>
+                    <dl class="list">
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">课程信息</a>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">插班原则</a>
+                        </dd>
+                        <dd class="kv-line">
+                            <a class="dd-padding kv-v icon-more">退班原则</a>
+                        </dd>
+                    </dl>
+                </dd>
+            </dl>
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="../js/flexible.js"></script>
+<script type="text/javascript" src="../js/lib/mui.min.js"></script>
+<script type="text/javascript" src="../js/lib/mui.picker.js"></script>
+<script type="text/javascript" src="../js/lib/mui.poppicker.js"></script>
+<script type="text/javascript">
+var sex = new mui.PopPicker();
+var id = new mui.PopPicker();
+id.setData([{
+    value:"undergraduate",
+    text:"大学生"
+},{
+    value:"teacher",
+    text:"专职老师"
+},{
+    value:"expert",
+    text:"达人"
+},{
+    value:"other",
+    text:"其他"
+}])
+
+sex.setData([{
+    value: "male",
+    text: "男"
+}, {
+    value: "female",
+    text: "女"
+}])
+var picSex = document.getElementById("picSex");
+var picId = document.getElementById("picId");
+picId.addEventListener("tap",function(event){
+    id.show(function(items){
+        var result = items[0];
+        picId.value = result.value;
+        picId.innerText = result.text;
+    })
+})
+picSex.addEventListener("tap", function(event) {
+    sex.show(function(items) {
+        var result = items[0];
+        picSex.value = result.value;
+        picSex.innerText = result.text;
+    })
+})
+</script>
+
+</html>

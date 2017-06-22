@@ -3,14 +3,13 @@ $(function() {
         var $href_void = $(".href-void a");
         $href_void.attr('href', 'javascript:void(0)');
         var $category = $(".category");
-        
         $category.each(function() {
             var $choose = $(this).children();
             $choose.click(function(event) {
                 var $choosed = $(this).children();
                 $choosed.toggleClass("choosed");
             })
-        }); 
+        });
 
         // var $category_a = $(".category li>a");
         // $category_a.click(function(event){
@@ -69,18 +68,17 @@ $(function() {
         }else if($buyNum == 1) {
                 $(this).addClass("no-drop");
         }else{
-            $(".buyNum")[0].value = 1;          
+            $(".buyNum")[0].value = 1;
         }
     });
 
-    
     $(".increase").click(function(){
-        $buyNum = parseInt($(".buyNum").val());     
+        $buyNum = parseInt($(".buyNum").val());
         if($buyNum >=1){
             if($buyNum == 1){
                 $(".decrease").addClass("no-drop");
             }
-            $(".buyNum")[0].value = $buyNum+1;      
+            $(".buyNum")[0].value = $buyNum+1;
             $(".decrease").removeClass("no-drop");
 
         }else{
@@ -177,7 +175,7 @@ function scoreFun (object, opts){
 
     function show(num, obj){
         var n = parseInt(num) + 1;
-        var lefta = num * fen_d; 
+        var lefta = num * fen_d;
         var ww = fen_d * n;//星星宽度
         var scor = preA * n; //数字
         (len > 5) ? (atu = options.types[parseInt(num)]) : (atu = options.types[parseInt(num)+10]); //五星和三星

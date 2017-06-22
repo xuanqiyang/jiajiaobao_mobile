@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>毕业院校</title>
+    <title>工作单位认证</title>
 </head>
 
 <body class="container">
@@ -20,15 +20,26 @@
             </a>
         </div>
         <div class="nav-header">
-            <h1>毕业院校</h1>
+            <h1>工作单位认证</h1>
         </div>
         <div class="nav-wrap-right">
-            <a><span>保存</span></a>
+            <a id="save"><span>保存</span></a>
         </div>
     </header>
     <div class="content">
         <form class="bg-gray panel-padding">
-            <textarea class="text-area" placeholder="请填写您的毕业学校"></textarea>
+            <p class="tip">请提交你工作的学校、机构等单位的证明，例如：
+                <br> 1.劳动合同（包含姓名、单位印章等信息）
+                <br> 2.工作证（包含照片、姓名、单位名称等信息）
+            </p>
+            <div class="upload-panel">
+                <a id="save" href="javascript:;" class="ui-upload">
+                    <span class="icon-46"></span>
+                    <input type="file" accept="image/png, image/jpeg" multiple="multiple">
+                    <span class="icon-desc">点击添加图片</span>
+                </a>
+                <input class="static-input file-name" type="text" required="" readonly="readonly">
+            </div>
         </form>
     </div>
 </body>
