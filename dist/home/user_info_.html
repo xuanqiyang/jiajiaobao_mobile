@@ -58,7 +58,7 @@
                             <input type="text" name="" class="kv-v input-weak" placeholder="输入确切的时间段">
                         </dd>
                         <dd class="kv-line">
-                            <a class="dd-padding kv-v icon-more">学院概况</a>
+                            <a class="dd-padding kv-v icon-more">学员概况</a>
                         </dd>
                     </dl>
                 </dd>
@@ -72,25 +72,12 @@
                             <h6>课酬</h6>
                             <input type="text" name="" class="kv-v input-weak" placeholder="如100元/小时或协商">
                         </dd>
-                  <dd class="dd-padding kv-line">
+                        <dd class="dd-padding kv-line">
                             <h6>教师类型</h6>
                             <button id="picId" name="id" class="kv-v input-weak" value="undergraduate">大学生</button>
                         </dd>
                         <dd class="kv-line">
-                            <a class="dd-padding kv-v icon-more">自我简介</a>
-                        </dd>
-                    </dl>
-                </dd>
-                <dd>
-                    <dl class="list">
-                        <dd class="kv-line">
-                            <a class="dd-padding kv-v icon-more">课程信息</a>
-                        </dd>
-                        <dd class="kv-line">
-                            <a class="dd-padding kv-v icon-more">插班原则</a>
-                        </dd>
-                        <dd class="kv-line">
-                            <a class="dd-padding kv-v icon-more">退班原则</a>
+                            <a class="dd-padding kv-v icon-more">其他要求</a>
                         </dd>
                     </dl>
                 </dd>
@@ -106,17 +93,17 @@
 var sex = new mui.PopPicker();
 var id = new mui.PopPicker();
 id.setData([{
-    value:"undergraduate",
-    text:"大学生"
-},{
-    value:"teacher",
-    text:"专职老师"
-},{
-    value:"expert",
-    text:"达人"
-},{
-    value:"other",
-    text:"其他"
+    value: "undergraduate",
+    text: "大学生"
+}, {
+    value: "teacher",
+    text: "专职老师"
+}, {
+    value: "expert",
+    text: "达人"
+}, {
+    value: "other",
+    text: "其他"
 }])
 
 sex.setData([{
@@ -128,8 +115,8 @@ sex.setData([{
 }])
 var picSex = document.getElementById("picSex");
 var picId = document.getElementById("picId");
-picId.addEventListener("tap",function(event){
-    id.show(function(items){
+picId.addEventListener("tap", function(event) {
+    id.show(function(items) {
         var result = items[0];
         picId.value = result.value;
         picId.innerText = result.text;

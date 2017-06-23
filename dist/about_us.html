@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="./css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>关于我们</title>
+</head>
+
+<body class="container">
+    <header class="top-nav">
+        <div class="nav-wrap-left">
+            <a href="./user.html">
+                <span class="icon-27"></span>
+            </a>
+        </div>
+        <div class="nav-header">
+            <h1>关于我们</h1>
+        </div>
+    </header>
+    <div class="content">
+        <figure class="log">
+            <img src="./images/log.png">
+        </figure>
+        <div class="menu-list">
+            <a id="wechat" class="menu-item icon-more">微信公众号&nbsp;&nbsp;&nbsp;&nbsp;<span>好姆家教宝</span></a>
+            <a id="tel" class="menu-item icon-more">客服热线&nbsp;&nbsp;&nbsp;&nbsp;<span>020-34332718</span></a>
+        </div>
+        <p style="margin: 0.33333rem; text-indent: 2em; line-height: 1.5em; font-size:0.213333rem">
+            家教宝成立于2013年，是一家以投资+教育+科技的集团，总部设在美丽的新加坡。业务分别在中国和新加坡，新加坡好姆教育集团下属有 广州好姆教育科技有限公司 、好姆云学院、星银投资、好姆国际精英教师培训学院等都均在中国广州陆续开展。创办初期以国内教育软件开发为基础，开发了多款儿童教育软件，儿童教育产品，也涉足教育机器人研发，新加坡投资移民等项目，各个项目都取得了傲人的成绩，特别在儿童教育科技方面即取得了丰硕成果也深受同行的认可。
+        </p>
+    </div>
+    <div class="copyright">
+        <p>© Copyright 2017 By Home English - All rights Reserved!</p>
+        <p>粤ICP备15111299号-3</p>
+        <p>广州市好姆教育科技有限公司</p>
+    </div>
+</body>
+<script type="text/javascript" src="./js/flexible.js"></script>
+<script type="text/javascript" src="./js/lib/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init({
+        swipeBack: true
+    });
+    document.getElementById("wechat").addEventListener('tap', function(){
+        mui.alert("<img class='wechat-code' src='./images/wechat.jpg'>",'好姆家教宝公众号',function(){});
+    });
+    document.getElementById("tel").addEventListener("tap",function(){
+        mui.confirm("020-34332718","好姆热线",["取消","<a href='tel:02034332718'>呼叫</a>"],function(){});
+    })
+</script>
+</html>

@@ -55,7 +55,6 @@ $yellow:#F18C39;
         width: 100%;
     }
 }
-
 @mixin top-nav($bgColor, $color) {
     font-size: 0.346667rem;
     display: -webkit-box;
@@ -1471,11 +1470,20 @@ $yellow:#F18C39;
 .btn {
     padding: 0.2rem 0.333333rem;
     font-size: 0.266667rem;
+    border-radius: 5px;
+}
+
+.large-btn {
+    width: 100%;
 }
 
 .red-btn {
     background-color: $red;
     color: #fff;
+}
+
+.btn-wrapper {
+    padding: 0.333333rem;
 }
 
 .sub-nav-c {
@@ -1842,10 +1850,12 @@ $yellow:#F18C39;
 #ask {
     padding-top: 0.333333rem;
 }
-.text-area{
-	width: 9.333333rem;
-  height: 3.333333rem;
+
+.text-area {
+    width: 9.333333rem;
+    height: 3.333333rem;
 }
+
 .menu-list {
     background-color: #fbfbfb;
     .icon-more {
@@ -1873,10 +1883,10 @@ $yellow:#F18C39;
         &:last-child {
             border-bottom: 0;
         }
-        .menu-exinfo{
-        	float: right;
-        	margin-right:0.7rem;
-        	color: $blue;
+        .menu-exinfo {
+            float: right;
+            margin-right: 0.7rem;
+            color: $blue;
         }
         &:before {
             margin-right: 0.666667rem;
@@ -1922,10 +1932,12 @@ $yellow:#F18C39;
         }
     }
 }
-.tip{
-	line-height: 1.5em;
-	color: #666;
+
+.tip {
+    line-height: 1.5em;
+    color: #666;
 }
+
 .upload-panel {
     background-color: #eee;
     padding-top: 0.333333rem;
@@ -1968,10 +1980,11 @@ $yellow:#F18C39;
     display: -webkit-flex;
     display: flex;
     position: relative;
-    color: #333;
+    color: #666;
     align-items: center;
     font-size: 14px;
     h6 {
+    	color: #666;
         margin-right: 0.333333rem;
         width: 1.733333rem;
         white-space: nowrap;
@@ -1992,16 +2005,19 @@ $yellow:#F18C39;
         }
     }
     .icon-more {
-        color: #333;
+        color: #666;
         &:after {
-            color: #999;
+            color: #666;
             position: absolute;
             font-size: 0.213333rem;
             right: .45rem;
         }
     }
 }
+.wechat-code{
+	width: 5.733333rem;
 
+}
 .input-weak {
     height: .7rem;
     border-radius: 0.066667rem;
@@ -2020,11 +2036,47 @@ $yellow:#F18C39;
     background-color: #fff !important;
     color: #4EB6EC !important;
 }
-.show-picker{
+
+.show-picker {
     border: none !important;
     background-color: #fff !important;
-    color: #333 !important; 
+    color: #333 !important;
     line-height: inherit !important;
+}
+
+.order-nav {
+    .nav-item {
+        width: 25%;
+        display: inline-block;
+        line-height: 1.333333rem;
+        text-align: center;
+        &:active {
+            color: $blue;
+        }
+        .item-num {
+            color: $blue;
+        }
+    }
+    .current {
+        color: $blue;
+    }
+}
+
+.order-info {
+    font-size: 0.213333rem;
+    background-color: #f6f6f6;
+    padding:0.2rem;
+    overflow: hidden;
+    .price {
+        i {
+            color: $red;
+        }
+    }
+    .order-statu {
+    		float: right;
+        color: $red;
+        display: inline-block;
+    }
 }
 
 .file-name {
@@ -2032,23 +2084,38 @@ $yellow:#F18C39;
     height: 0;
     position: absolute;
 }
-.wallet-panel{
-    .balance{
+
+.wallet-panel {
+    .balance {
         background-color: $blue;
         text-align: center;
         height: 3.466667rem;
-        h1{
-            color:#fff;
+        h1 {
+            color: #fff;
             font-size: 0.72rem;
             font-weight: bold;
         }
-        .bill-details{
-            color:#fff;
+        .bill-details {
+            color: #fff;
             padding: 0.133333rem 0.666667rem;
             border: 1px solid #fff;
+            display: inline-block;
+        }
+    }
+    .recharge-button {
+        a {
+            display: inline-block;
+            width: 50%;
+            background-color: #eee;
+            text-align: center;
+            line-height: 0.733333rem;
+            &:active {
+                background-color: #D8D8D8;
+            }
         }
     }
 }
+
 .mui-plus header.mui-bar {
     display: none
 }
@@ -2261,7 +2328,21 @@ $yellow:#F18C39;
         width: 60%;
     }
 }
-
+.log{
+	text-align: center;
+	margin: 0.33333rem;
+	img{
+		width:2.6rem;
+	}
+}
+.copyright{
+	font-size: 12px;
+	text-align: center;
+	padding: 0.33333rem 0;
+	p{
+		line-height: 1.5em;
+	}
+}
 .fn-clear {
     *zoom: 1;
 }
