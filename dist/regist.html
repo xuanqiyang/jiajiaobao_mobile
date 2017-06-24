@@ -30,6 +30,10 @@
                     <input class="input-weak kv-v" placeholder="请输入您的手机号码" type="text" name="email">
                 </dd>
                 <dd class="dd-padding kv-line">
+                    <input type="text" name="" class="kv-v input-weak" placeholder="请输入验证码">
+                    <button type="button" id="verifiCode" class="btn blue-btn">获取验证码</button>
+                </dd>
+                <dd class="dd-padding kv-line">
                     <input class="input-weak kv-v" placeholder="请输入密码" type="password" id="regpsw" name="regpsw">
                 </dd>
                 <dd class="dd-padding kv-line">
@@ -43,5 +47,26 @@
     </div>
 </body>
 <script type="text/javascript" src="./js/flexible.js"></script>
+<script type="text/javascript">
+function timer(o) {
+    if(time == 0){
+        o.removeAttribute('disabled');
+        o.innerText="获取验证码";
+        time = 60;
+    }else{
+        o.setAttribute("disabled", true);
+        o.innerText=time;
+        time--;
+        setTimeout(function(){
+            timer(o);
+        }, 1000)
+    }
 
+}
+var verifiCode = document.getElementById("verifiCode");
+var time = 60;
+verifiCode.onclick=function(e){
+    timer(this);
+}
+</script>
 </html>
