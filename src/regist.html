@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
     <meta content="telephone=no" name="format-detection" />
     <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" href="./css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -27,11 +28,11 @@
         <form action="" method="post" id="reg_form">
             <dl class="list">
                 <dd class="dd-padding kv-line">
-                    <input class="input-weak kv-v" placeholder="请输入您的手机号码" type="text" name="email">
+                    <input class="input-weak kv-v" placeholder="请输入您的手机号码" type="text" name="cellphone" id="cellphone">
                 </dd>
                 <dd class="dd-padding kv-line">
-                    <input type="text" name="" class="kv-v input-weak" placeholder="请输入验证码">
-                    <button type="button" id="verifiCode" class="btn blue-btn">获取验证码</button>
+                    <input type="number" name="verifiCode" class="kv-v input-weak" id="verifiCode" placeholder="请输入验证码" value="123234">
+                    <button type="button" id="getCode" class="btn blue-btn">获取验证码</button>
                 </dd>
                 <dd class="dd-padding kv-line">
                     <input class="input-weak kv-v" placeholder="请输入密码" type="password" id="regpsw" name="regpsw">
@@ -47,6 +48,12 @@
     </div>
 </body>
 <script type="text/javascript" src="./js/flexible.js"></script>
+<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/lib/mui.min.js"></script>
+<script type="text/javascript" src="./js/lib/jquery.validate.min.js"></script>
+<script type="text/javascript" src="./js/lib/messages_zh.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/validate.js"></script>
 <script type="text/javascript">
 function timer(o) {
     if(time == 0){
@@ -63,10 +70,15 @@ function timer(o) {
     }
 
 }
-var verifiCode = document.getElementById("verifiCode");
+var getCode = document.getElementById("getCode");
+var cellphone = document.getElementById("cellphone");
 var time = 60;
-verifiCode.onclick=function(e){
-    timer(this);
+var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+getCode.onclick=function(e){
+    if (cellphone.value.length == 11 && mobile.test(cellphone.value)) { timer(this); }
+    else{ mui.alert("请输入手机号码"); }
 }
+
+
 </script>
 </html>

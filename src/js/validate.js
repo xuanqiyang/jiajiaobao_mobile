@@ -8,20 +8,24 @@ $(function() {
         var maxSize = param * 1024 * 1024;
         return this.optional(element) || fileSize < maxSize;
     });
-    $.validator.addMethod("checkName",function(value, element, param){
+    $.validator.addMethod("checkName", function(value, element, param) {
         var checkName = /^[\w\u4e00-\u9fa5]{4,20}$/g;
         return this.optional(element) || (checkName.test(value));
     })
-
+    $.validator.addMethod("isPhone", function(value, element, param) {
+        var length = value.length;
+        var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    })
     $("#login_form").validate({
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
         onsubmit: true,
         rules: {
-            email: {
+            cellphone: {
                 required: true,
-                email: true
+                isPhone: true
             },
             password: {
                 required: true,
@@ -30,9 +34,9 @@ $(function() {
             }
         },
         messages: {
-            email: {
-                required: "请输入电子邮箱",
-                email: "输入正确的电子邮箱"
+            cellphone: {
+                required: "请输入手机号码",
+                isPhone: "输入正确的手机号码"
             },
             password: {
                 required: "请输入密码",
@@ -47,9 +51,15 @@ $(function() {
         },
         onsubmit: true,
         rules: {
-            email: {
+            cellphone: {
                 required: true,
-                email: true
+                isPhone: true
+            },
+            verifiCode: {
+                required: true,
+                number: true,
+                minlength: 6,
+                maxlength: 6
             },
             regpsw: {
                 required: true,
@@ -64,9 +74,15 @@ $(function() {
             }
         },
         messages: {
-            email: {
-                required: "请输入电子邮箱",
-                email: "请输入正确的电子邮箱"
+            cellphone: {
+                required: "请输入手机号码",
+                isPhone: "请输入正确的手机号码"
+            },
+            verifiCode: {
+                required: "请输入验证码",
+                number: "请输入正确的验证码",
+                minlength: "请输入正确的验证码",
+                maxlength: "请输入正确的验证码"
             },
             regpsw: {
                 required: "请输入密码",
@@ -86,14 +102,15 @@ $(function() {
     });
 
     $("#changepsw").validate({
-    	        errorPlacement: function(error, element) {
+        errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
         rules: {
-            oldpsw: {
+            verifiCode: {
                 required: true,
+                number: true,
                 minlength: 6,
-                maxlength: 20
+                maxlength: 6
             },
             newpsw: {
                 required: true,
@@ -108,10 +125,11 @@ $(function() {
             }
         },
         messages: {
-            oldpsw: {
-                required: "*请填写密码",
-                minlength: "密码不能少于6位",
-                maxlength: "密码不能超过20位"
+            verifiCode: {
+                required: "请输入验证码",
+                number: "请输入正确的验证码",
+                minlength: "请输入正确的验证码",
+                maxlength: "请输入正确的验证码"
             },
             newpsw: {
                 required: "*请填写密码",
@@ -146,7 +164,7 @@ $(function() {
     });
 
     $("#resetpswd").validate({
-    	        errorPlacement: function(error, element) {
+        errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
         rules: {
@@ -177,9 +195,9 @@ $(function() {
         }
     });
     $("#userinfo").validate({
-      	        errorPlacement: function(error, element) {
+        errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
-        },  	
+        },
         rules: {
             username: {
                 required: true,
@@ -190,29 +208,29 @@ $(function() {
                 required: true,
                 email: true
             },
-            cellphone:{
-            	number:true
+            cellphone: {
+                number: true
 
             },
-            qq:{
-            	number:true
+            qq: {
+                number: true
             }
         },
         messages: {
             username: {
                 required: "请输入您的名字",
                 number: "请输入正确的姓名",
-                checkName:"请输入正确的姓名"
+                checkName: "请输入正确的姓名"
             },
             email: {
                 required: "请输入邮箱",
                 email: "请输入正确的邮箱"
             },
-            cellphone:{
-            	number:"请输入正确的手机号码"
+            cellphone: {
+                number: "请输入正确的手机号码"
             },
-            qq:{
-            	number:"请输入正确的QQ"
+            qq: {
+                number: "请输入正确的QQ"
             }
         }
     });
@@ -220,79 +238,79 @@ $(function() {
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
-        rules:{
-            username:{
-                required:true,
-                rangelength:[4,20],
-                checkName:true
+        rules: {
+            username: {
+                required: true,
+                rangelength: [4, 20],
+                checkName: true
             }
         },
-        messages:{
-            username:{
-            required:"请输入用户名",
-            rangelength:"用户名长度4-20",
-            checkName:"请输入正确的用户名"
+        messages: {
+            username: {
+                required: "请输入用户名",
+                rangelength: "用户名长度4-20",
+                checkName: "请输入正确的用户名"
             }
 
-        }        
+        }
     });
     $("#placeReceipt").validate({
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
-        rules:{
-            cName:{
-                required:true,
-                checkName:true
+        rules: {
+            cName: {
+                required: true,
+                checkName: true
             },
-            cellphone:{
-                number:true,
-                required:true
+            cellphone: {
+                number: true,
+                required: true
             },
-            address:{
-                required:true
+            address: {
+                required: true
             }
         },
-        messages:{
-                      cName:{
-                required:"请输入收货人姓名",
-                checkName:"请输入正确的姓名"
+        messages: {
+            cName: {
+                required: "请输入收货人姓名",
+                checkName: "请输入正确的姓名"
             },
-            cellphone:{
-                number:"请输入收货人的手机号码",
-                required:"请输入正确的手机号码"
+            cellphone: {
+                number: "请输入收货人的手机号码",
+                required: "请输入正确的手机号码"
             },
-            address:{
-                required:"请输入详细地址"
-            }  
+            address: {
+                required: "请输入详细地址"
+            }
         }
     })
     $("#portrait").validate({
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
-        rules:{
-            portrait_fname:{
+        rules: {
+            portrait_fname: {
                 required: true,
                 filetype: ['jpg', 'png']
             }
         },
-        messages:{
-            portrait_fname:{
-                required:"请上传你的头像",
-                filetype:"头像格式只能是png,jpg"
+        messages: {
+            portrait_fname: {
+                required: "请上传你的头像",
+                filetype: "头像格式只能是png,jpg"
             }
         }
 
     });
     $("#companyinfo").validate({
-    	        errorPlacement: function(error, element) {
+        errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
         rules: {
             c_name: {
                 required: true,
-                checkName:true
+                checkName: true
             },
             c_organacode: {
                 required: true
@@ -327,21 +345,21 @@ $(function() {
                 filetype: ['jpg', 'png']
             },
             // pct_license:{
-            // 	filesize: 1				
+            // 	filesize: 1
             // },
             license_fname: {
                 required: true,
                 filetype: ['jpg', 'png']
             },
             // pct_cpnylogo:{
-            // 	filesize: 1				
+            // 	filesize: 1
             // },
             cpnylogo_fname: {
                 required: true,
                 filetype: ['jpg', 'png']
             },
             // pct_cpny:{
-            // 	filesize: 1				
+            // 	filesize: 1
             // },
             cpny_fname: {
                 required: true,
@@ -392,21 +410,21 @@ $(function() {
                 filetype: "文件类型必须为jpg,png"
             },
             // pct_license:{
-            // 	filesize: "文件大小不超过1M"				
+            // 	filesize: "文件大小不超过1M"
             // },
             license_fname: {
                 required: "请上传营业执照",
                 filetype: "文件类型必须为jpg,png"
             },
             // pct_cpnylogo:{
-            // 	filesize: "文件大小不超过1M"				
+            // 	filesize: "文件大小不超过1M"
             // },
             cpnylogo_fname: {
                 required: "请上传公司logo",
                 filetype: "文件类型必须为jpg,png"
             },
             // pct_cpny:{
-            // 	filesize: "文件大小不超过1M"				
+            // 	filesize: "文件大小不超过1M"
             // },
             cpny_fname: {
                 required: "请上传公司图片",
@@ -427,7 +445,7 @@ $(function() {
     function errorModal(valid_form) {
         var valid = valid_form.valid();
         if (!valid) {
-            $("#errorModal").modal();
+            mui.alert("<div id='errorMesg'></div>")
         }
     }
     $(".btn-submit").click(function() {
