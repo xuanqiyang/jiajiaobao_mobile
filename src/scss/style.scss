@@ -1,6 +1,7 @@
 html {
     font-size: 75px;
     min-width: 320px;
+    background-color: #fbfbfb;
 }
 
 #__bs_notify__ {
@@ -55,6 +56,7 @@ $yellow:#F18C39;
         width: 100%;
     }
 }
+
 @mixin top-nav($bgColor, $color) {
     font-size: 0.346667rem;
     display: -webkit-box;
@@ -1020,6 +1022,7 @@ $yellow:#F18C39;
 
 .article-guide {
     section {
+        padding-bottom: 0.333333rem;
         h1 {
             font-size: 18px;
             line-height: 1.5em;
@@ -1028,16 +1031,20 @@ $yellow:#F18C39;
             font-size: 0.266667rem;
             line-height: 1.5em;
         }
+        h3 {
+            font-size: 16px;
+            color: $blue;
+        }
         p {
             font-size: 0.266667rem;
             line-height: 1.5em;
         }
         figure {
             width: 80%;
-            margin: 0.266667rem auto;
+            margin: 0.6rem auto;
             text-align: center;
             img {
-                width: 30%;
+                width: 50%;
             }
             figcaption {
                 h2 {
@@ -1061,6 +1068,59 @@ $yellow:#F18C39;
         h2 {
             font-size: 0.466667rem;
         }
+    }
+}
+
+@mixin step {
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    margin: 0.6rem auto;
+    h1 {
+        font-size: 0.6rem;
+        color: #fff;
+    }
+}
+
+.step1 {
+    @include step;
+    width: 6.533333rem;
+    height: 3.413333rem;
+    background-image: url(../images/radius-rect1.png);
+    h1 {
+        line-height: 2rem !important;
+    }
+}
+
+.step2 {
+    @include step;
+    width: 6.533333rem;
+    height: 3.413333rem;
+    background-image: url(../images/radius-rect2.png);
+    h1 {
+        line-height: 1.5em !important;
+        padding: 0.45rem 0;
+    }
+}
+
+.step3 {
+    @include step;
+    width: 6.533333rem;
+    height: 3.413333rem;
+    background-image: url(../images/radius-rect3.png);
+    h1 {
+        line-height: 2rem !important;
+    }
+}
+
+.step4 {
+    @include step;
+    width: 6.533333rem;
+    height: 3.413333rem;
+    background-image: url(../images/radius-rect4.png);
+    h1 {
+        padding: 0.45rem 0;
+        line-height: 1rem !important;
     }
 }
 
@@ -1466,10 +1526,12 @@ $yellow:#F18C39;
         }
     }
 }
-#getCode{
-	width: 2.666667rem;
-	margin-left: 0.2rem;
+
+#getCode {
+    width: 2.666667rem;
+    margin-left: 0.2rem;
 }
+
 .btn {
     padding: 0.2rem 0.333333rem;
     font-size: 0.266667rem;
@@ -1485,10 +1547,12 @@ $yellow:#F18C39;
     background-color: $red;
     color: #fff;
 }
+
 .blue-btn {
     background-color: $blue;
     color: #fff;
 }
+
 .btn-wrapper {
     padding: 0.333333rem;
 }
@@ -1729,10 +1793,17 @@ $yellow:#F18C39;
         }
     }
 }
-.pct-overflow{
-    height: 4.133333rem;
-     overflow: hidden;
+
+.pct-overflow {
+    overflow: visible !important;
+    height: 100% !important;
 }
+
+.hidden-pct {
+    height: 4.133333rem;
+    overflow: hidden;
+}
+
 .questions-list {
     padding: .333333rem;
     width: 9.333333rem;
@@ -1862,6 +1933,7 @@ $yellow:#F18C39;
 .text-area {
     width: 9.333333rem;
     height: 3.333333rem;
+    font-size: 0.213333rem;
 }
 
 .menu-list {
@@ -1992,7 +2064,7 @@ $yellow:#F18C39;
     align-items: center;
     font-size: 14px;
     h6 {
-    	color: #666;
+        color: #666;
         margin-right: 0.333333rem;
         width: 1.733333rem;
         white-space: nowrap;
@@ -2022,10 +2094,11 @@ $yellow:#F18C39;
         }
     }
 }
-.wechat-code{
-	width: 5.733333rem;
 
+.wechat-code {
+    width: 60%;
 }
+
 .input-weak {
     height: 1rem;
     border-radius: 0.066667rem;
@@ -2052,6 +2125,10 @@ $yellow:#F18C39;
     line-height: inherit !important;
 }
 
+.hidden-input {
+    display: none;
+}
+
 .order-nav {
     .nav-item {
         width: 25%;
@@ -2073,7 +2150,7 @@ $yellow:#F18C39;
 .order-info {
     font-size: 0.213333rem;
     background-color: #f6f6f6;
-    padding:0.2rem;
+    padding: 0.2rem;
     overflow: hidden;
     .price {
         i {
@@ -2081,7 +2158,7 @@ $yellow:#F18C39;
         }
     }
     .order-statu {
-    		float: right;
+        float: right;
         color: $red;
         display: inline-block;
     }
@@ -2091,6 +2168,8 @@ $yellow:#F18C39;
     width: 0;
     height: 0;
     position: absolute;
+    padding: 0;
+    margin: 0;
 }
 
 .wallet-panel {
@@ -2099,7 +2178,7 @@ $yellow:#F18C39;
         text-align: center;
         height: 3.466667rem;
         h1 {
-        		padding: 0.666667rem 0;
+            padding: 0.666667rem 0;
             color: #fff;
             font-size: 0.72rem;
             font-weight: bold;
@@ -2321,6 +2400,10 @@ $yellow:#F18C39;
     height: 0;
 }
 
+.dis-none {
+    display: none;
+}
+
 .none {
     display: block;
     width: 100%;
@@ -2337,21 +2420,24 @@ $yellow:#F18C39;
         width: 60%;
     }
 }
-.log{
-	text-align: center;
-	margin: 0.33333rem;
-	img{
-		width:2.6rem;
-	}
+
+.log {
+    text-align: center;
+    margin: 0.33333rem;
+    img {
+        width: 2.6rem;
+    }
 }
-.copyright{
-	font-size: 12px;
-	text-align: center;
-	padding: 0.33333rem 0;
-	p{
-		line-height: 1.5em;
-	}
+
+.copyright {
+    font-size: 12px;
+    text-align: center;
+    padding: 0.33333rem 0;
+    p {
+        line-height: 1.5em;
+    }
 }
+
 .fn-clear {
     *zoom: 1;
 }

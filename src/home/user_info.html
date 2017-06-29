@@ -10,32 +10,34 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-
     <title>个人资料</title>
 </head>
 
 <body class="container">
-    <header class="top-nav">
-        <div class="nav-wrap-left">
-            <a href="index.html">
-                <span class="icon-27"></span>
-            </a>
-        </div>
-        <div class="nav-header">
-            <h1>个人资料</h1>
-        </div>
-    </header>
     <div class="content">
-        <form>
+        <header class="top-nav">
+            <div class="nav-wrap-left">
+                <a href="index.html">
+                    <span class="icon-27"></span>
+                </a>
+            </div>
+            <div class="nav-header">
+                <h1>个人资料</h1>
+            </div>
+            <div class="nav-wrap-right">
+                <a id="save"><span>保存</span></a>
+            </div>
+        </header>
+        <form id="teacherinfo" method="post">
             <dl class="user-info">
                 <dd>
                     <dl class="list">
                         <dd class="dd-padding kv-line">
                             <h6>用户昵称</h6>
-                            <input type="text" name="" class="kv-v input-weak" placeholder="输入您的昵称">
+                            <input type="text" name="username" class="kv-v input-weak" placeholder="输入您的昵称">
                         </dd>
                         <dd>
-                            <a class="kv-line dd-padding">
+                            <a href="" class="kv-line dd-padding">
                                 <h6>用户头像</h6>
                                 <div class="portrait kv-v">
                                     <img class="portrait" src="../images/portrait.jpg">
@@ -48,11 +50,11 @@
                     <dl class="list">
                         <dd class="dd-padding kv-line">
                             <h6>授课科目</h6>
-                            <input type="text" name="" class="kv-v input-weak" placeholder="如小学一年级语文、数学等">
+                            <input type="text" name="subject" class="kv-v input-weak" placeholder="如小学一年级语文、数学等">
                         </dd>
                         <dd class="dd-padding kv-line">
                             <h6>授课地址</h6>
-                            <input type="text" name="" class="kv-v input-weak" placeholder="输入您的地址">
+                            <input type="text" name="address" class="kv-v input-weak" placeholder="输入您的地址">
                         </dd>
                         <dd class="dd-padding kv-line">
                             <h6>辅导方式</h6>
@@ -67,7 +69,7 @@
                         </dd>
                         <dd class="dd-padding kv-line">
                             <h6>性别</h6>
-                            <button id="picSex" name="sex" class="kv-v input-weak" value="way1">男</button>
+                            <button id="picSex" name="sex" class="kv-v input-weak" value="male">男</button>
                         </dd>
                         <dd class="kv-line">
                             <a href="#" class="dd-padding kv-v icon-more">所获证书</a>
@@ -94,6 +96,8 @@
                     </dl>
                 </dd>
             </dl>
+            <button class="btn-submit dis-none">
+            </button>
         </form>
     </div>
 </body>
@@ -101,41 +105,47 @@
 <script type="text/javascript" src="../js/lib/mui.min.js"></script>
 <script type="text/javascript" src="../js/lib/mui.picker.js"></script>
 <script type="text/javascript" src="../js/lib/mui.poppicker.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../js/lib/messages_zh.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/validate.js"></script>
 <script type="text/javascript">
-    var teaWay = new mui.PopPicker();
-    var sex = new mui.PopPicker();
-    teaWay.setData([{
-        value:"way1",
-        text:"学生上门"
-    },{
-        value:"way2",
-        text:"老师上门" 
-    },{
-        value:"way3",
-        text:"在线授课"
-    }])
-    sex.setData([{
-        value:"male",
-        text:"男"
-    },{
-        value:"female",
-        text:"女"
-    }])
-    var picWay = document.getElementById("picWay");
-    var picSex =  document.getElementById("picSex");
-    picWay.addEventListener("tap",function(event){
-        teaWay.show(function(items){
-          var result = items[0];
-           picWay.value = result.value;
-           picWay.innerText = result.text;
-        })
+var teaWay = new mui.PopPicker();
+var sex = new mui.PopPicker();
+teaWay.setData([{
+    value: "way1",
+    text: "学生上门"
+}, {
+    value: "way2",
+    text: "老师上门"
+}, {
+    value: "way3",
+    text: "在线授课"
+}])
+sex.setData([{
+    value: "male",
+    text: "男"
+}, {
+    value: "female",
+    text: "女"
+}])
+var picWay = document.getElementById("picWay");
+var picSex = document.getElementById("picSex");
+picWay.addEventListener("tap", function(event) {
+    teaWay.show(function(items) {
+        var result = items[0];
+        picWay.value = result.value;
+        picWay.innerText = result.text;
     })
-    picSex.addEventListener("tap",function(event){
-        sex.show(function(items){
-           var result = items[0];
-           picSex.value = result.value;
-           picSex.innerText = result.text;
-        })
+})
+picSex.addEventListener("tap", function(event) {
+    sex.show(function(items) {
+        var result = items[0];
+        picSex.value = result.value;
+        picSex.innerText = result.text;
     })
+})
 </script>
+
 </html>

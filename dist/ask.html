@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
     <meta content="telephone=no" name="format-detection" />
     <meta http-equiv="Pragma" content="no-cache">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>提问</title>
 </head>
 
@@ -22,30 +23,34 @@
         <div class="nav-header">
             <h1>提问</h1>
         </div>
+                <div class="nav-wrap-right">
+            <a id="save"><span>提交</span></a>
+        </div>
     </header>
     <div class="content">
         <div class="tool-bar">
             <a class="all-subjects">全部科目<i class="icon-39"></i></a>
         </div>
-        <form class="bg-gray" id="ask">
+        <form class="bg-gray" id="ask" method="post">
             <div class="upload-panel panel-margin">
                 <a href="javascript:;" class="ui-upload">
                     <span class="icon-46"></span>
-                    <input type="file" accept="image/png, image/jpeg">
+                    <input type="file" accept="image/png, image/jpeg" multiple="multiple">
                     <span class="icon-desc">上传图片</span>
                 </a>
-                <input class="static-input file-name" type="text" required="" readonly="readonly">
+                <input class="static-input file-name" type="text" readonly="readonly" name="ask_fname">
             </div>
-            <textarea class="panel-margin text-area" placeholder="请详细描述问题" onscroll="this.row++;">
-            </textarea>
-            <div class="bot-nav-2">
-                <button class="button-nav">提交</button>
-            </div>
+            <textarea class="panel-margin text-area" name="ask_descript" placeholder="请详细描述问题" onscroll="this.row++;"></textarea>
+                        <button class="btn-submit dis-none">
+            </button>
         </form>
     </div>
 </body>
-<script type="text/javascript" src="js/flexible.js"></script>
-<script type="text/javascript" src="js/lib/jquery.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
+<script type="text/javascript" src="./js/flexible.js"></script>
+<script type="text/javascript" src="./js/lib/mui.min.js"></script>
+<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/lib/jquery.validate.min.js"></script>
+<script type="text/javascript" src="./js/lib/messages_zh.min.js"></script>
+<script type="text/javascript" src="./js/validate.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
 </html>

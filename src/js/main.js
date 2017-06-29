@@ -84,7 +84,7 @@ $(function() {
             $(".buyNum")[0].value = 1;
         }
     })
-    $(".comment-pct").click(function() {
+    $(".hidden-pct").click(function() {
         $(this).toggleClass("pct-overflow");
     })
 })

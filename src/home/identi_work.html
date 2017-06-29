@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
     <meta content="telephone=no" name="format-detection" />
     <meta http-equiv="Pragma" content="no-cache">
+  <link rel="stylesheet" type="text/css" href="../css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -27,22 +28,29 @@
         </div>
     </header>
     <div class="content">
-        <form class="bg-gray panel-padding">
+        <form id="identi_work" class="bg-gray panel-padding" method="post">
             <p class="tip">请提交你工作的学校、机构等单位的证明，例如：
                 <br> 1.劳动合同（包含姓名、单位印章等信息）
                 <br> 2.工作证（包含照片、姓名、单位名称等信息）
             </p>
             <div class="upload-panel">
-                <a id="save" href="javascript:;" class="ui-upload">
+                <a href="javascript:;" class="ui-upload">
                     <span class="icon-46"></span>
-                    <input type="file" accept="image/png, image/jpeg" multiple="multiple">
+                    <input type="file" accept="image/png, image/jpeg" name="work">
                     <span class="icon-desc">点击添加图片</span>
                 </a>
-                <input class="static-input file-name" type="text" required="" readonly="readonly">
+                <input name="work_fname" class="file-name" type="text" required="" readonly="readonly">
             </div>
+            <button class="btn-submit dis-none">
+            </button>
         </form>
     </div>
 </body>
 <script type="text/javascript" src="../js/flexible.js"></script>
-
+<script type="text/javascript" src="../js/lib/mui.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../js/lib/messages_zh.min.js"></script>
+<script type="text/javascript" src="../js/validate.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 </html>
