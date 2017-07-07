@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
     <meta content="telephone=no" name="format-detection" />
     <meta http-equiv="Pragma" content="no-cache">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#0095FF">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0095FF">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0095FF">
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -28,12 +35,132 @@
     </header>
     <div class="content">
         <nav class="course-nav">
-            <a class="all current">全部科目<i class="icon-39"></i></a>
+            <a id="menu-btn" class="all current" href="javascript:;">全部科目<i class="icon-39"></i></a>
             <i class="cut-line">|</i>
             <a class="nav-item">直播课</a>
             <a class="nav-item">视频课</a>
             <a class="nav-item">在线一对一</a>
         </nav>
+        <div class="container menu-wrapper hidden" id="menu-wrapper" >
+            <div id="menu" class="menu container">
+                <div class="main-menu">
+                    <h3>热门推荐</h3>
+                    <ul class="tabs-bar">
+                        <li class="nav-item">幼小</li>
+                        <li class="nav-item">初中</li>
+                        <li class="nav-item">高中</li>
+                        <li class="nav-item">语言</li>
+                        <li class="nav-item">艺术</li>
+                        <li class="nav-item">其他</li>
+                    </ul>
+                </div>
+                <div class="tab-box">
+                    <div class="sub-menu box-item" style="display: block;">
+                        <h3>热门推荐</h3>
+                        <ul class="subject-table">
+                            <li><a>高中</a>
+                            </li>
+                            <li><a>数学</a>
+                            </li>
+                            <li><a>英语</a>
+                            </li>
+                            <li><a>奥数</a>
+                            </li>
+                            <li><a>日语</a>
+                            </li>
+                            <li><a>韩语</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu box-item">
+                        <h3>吃饭推荐</h3>
+                        <ul class="subject-table">
+                            <li><a>小学</a>
+                            </li>
+                            <li><a>数学</a>
+                            </li>
+                            <li><a>英语</a>
+                            </li>
+                            <li><a>奥数</a>
+                            </li>
+                            <li><a>日语</a>
+                            </li>
+                            <li><a>韩语</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu box-item">
+                        <h3>视角推荐</h3>
+                        <ul class="subject-table">
+                            <li><a>大学</a>
+                            </li>
+                            <li><a>数学</a>
+                            </li>
+                            <li><a>英语</a>
+                            </li>
+                            <li><a>奥数</a>
+                            </li>
+                            <li><a>日语</a>
+                            </li>
+                            <li><a>韩语</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu box-item">
+                        <h3>大家推荐</h3>
+                        <ul class="subject-table">
+                            <li><a>语文</a>
+                            </li>
+                            <li><a>数学</a>
+                            </li>
+                            <li><a>光你</a>
+                            </li>
+                            <li><a>奥数</a>
+                            </li>
+                            <li><a>日语</a>
+                            </li>
+                            <li><a>韩语</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu box-item">
+                        <h3>不好推荐</h3>
+                        <ul class="subject-table">
+                            <li><a>语文</a>
+                            </li>
+                            <li><a>数学</a>
+                            </li>
+                            <li><a>英语</a>
+                            </li>
+                            <li><a>奥数</a>
+                            </li>
+                            <li><a>日语</a>
+                            </li>
+                            <li><a>韩语</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu box-item">
+                        <h3>热门推荐</h3>
+                        <ul class="subject-table">
+                            <li><a>语文</a>
+                            </li>
+                            <li><a>数学</a>
+                            </li>
+                            <li><a>英语</a>
+                            </li>
+                            <li><a>奥数</a>
+                            </li>
+                            <li><a>日语</a>
+                            </li>
+                            <li><a>韩语</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="menu-backdrop" class="menu-backdrop"></div>
         <a class="go-rate">你有待评价课程,快去给老师评价吧!<i class="icon-28"></i></a>
         <div class="course-items">
             <ul class="items">
@@ -83,5 +210,7 @@
     </footer>
 </body>
 <script type="text/javascript" src="js/flexible.js"></script>
-
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/mui.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>

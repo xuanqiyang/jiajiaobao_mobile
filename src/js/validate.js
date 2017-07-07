@@ -12,9 +12,9 @@ $(function() {
         var checkName = /^[\w\u4e00-\u9fa5]{1,20}$/g;
         return this.optional(element) || (checkName.test(value));
     });
-    $.validator.addMethod("checkPsw", function(value, element, param){
-    	var checkPsw = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}:";'<>?,.\/]).{6,20}$/;
-    	return this.optional(element) || (checkPsw.test(value));
+    $.validator.addMethod("checkPsw", function(value, element, param) {
+        var checkPsw = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}:";'<>?,.\/]).{6,20}$/;
+        return this.optional(element) || (checkPsw.test(value));
     });
     $.validator.addMethod("isPhone", function(value, element, param) {
         var length = value.length;
@@ -35,7 +35,7 @@ $(function() {
                 required: true,
                 maxlength: 20,
                 minlength: 6,
-                checkPsw:true
+                checkPsw: true
             }
         },
         messages: {
@@ -71,14 +71,14 @@ $(function() {
                 required: true,
                 maxlength: 20,
                 minlength: 6,
-                checkPsw:true
+                checkPsw: true
             },
             againpsw: {
                 required: true,
                 maxlength: 20,
                 minlength: 6,
                 equalTo: "#regpsw",
-                checkPsw:true
+                checkPsw: true
             }
         },
         messages: {
@@ -133,7 +133,7 @@ $(function() {
                 minlength: 6,
                 maxlength: 20,
                 equalTo: "#newpsw",
-								checkPsw: true
+                checkPsw: true
             }
         },
         messages: {
@@ -167,11 +167,11 @@ $(function() {
                 required: true,
                 checkName: true
             },
-            subject:{
-            	required: true
+            subject: {
+                required: true
             },
-            address:{
-            	required: true
+            address: {
+                required: true
             }
         },
         messages: {
@@ -179,11 +179,11 @@ $(function() {
                 required: "请输入您的用户昵称",
                 checkName: "用户昵称由中英文、数字、_、-组成"
             },
-            subject:{
-            	required: "输入您的授课科目"
+            subject: {
+                required: "输入您的授课科目"
             },
-            address:{
-            	required: "输入您的授课地址"
+            address: {
+                required: "输入您的授课地址"
             }
         }
     });
@@ -196,17 +196,17 @@ $(function() {
                 required: true,
                 checkName: true
             },
-            subject:{
-            	required: true
+            subject: {
+                required: true
             },
-            address:{
-            	required: true
+            address: {
+                required: true
             },
-						teatime:{
-            	required: true
+            teatime: {
+                required: true
             },
-            fee:{
-            	required: true
+            fee: {
+                required: true
             }
         },
         messages: {
@@ -214,17 +214,17 @@ $(function() {
                 required: "请输入您的用户昵称",
                 checkName: "用户昵称由中英文、数字、_、-组成"
             },
-            subject:{
-            	required: "输入您的求教科目"
+            subject: {
+                required: "输入您的求教科目"
             },
-            address:{
-            	required: "输入您的授课地址"
+            address: {
+                required: "输入您的授课地址"
             },
-            teatime:{
-            	required: "输入您的授课时间段"
+            teatime: {
+                required: "输入您的授课时间段"
             },
-            fee:{
-            	required: "输入您预计支付的课酬"
+            fee: {
+                required: "输入您预计支付的课酬"
             }
         }
     });
@@ -264,7 +264,7 @@ $(function() {
         }
 
     });
-        $("#identi_teacherID").validate({
+    $("#identi_teacherID").validate({
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
@@ -282,23 +282,41 @@ $(function() {
         }
 
     });
+    $("#identi_professor").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            professor_fname: {
+                required: true,
+                filetype: ['jpg', 'png']
+            }
+        },
+        messages: {
+            professor_fname: {
+                required: "请上传图片",
+                filetype: "图片只能是png,jpg"
+            }
+        }
+
+    });
     $("#ask").validate({
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
-        rules:{
-            ask_fname:{
-                filetype:['jpg','png']
+        rules: {
+            ask_fname: {
+                filetype: ['jpg', 'png']
             },
-            ask_descript:{
+            ask_descript: {
                 required: true
             }
         },
-        messages:{
-             ask_fname:{
-                filetype:"图片只能是png,jpg"
+        messages: {
+            ask_fname: {
+                filetype: "图片只能是png,jpg"
             },
-            ask_descript:{
+            ask_descript: {
                 required: "请填写对问题的详细描述"
             }
         }
@@ -307,20 +325,185 @@ $(function() {
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
         },
-        rules:{
-            course_fname:{
-                filetype:['jpg','png']
+        rules: {
+            course_fname: {
+                filetype: ['jpg', 'png']
             },
-            course_descript:{
+            course_descript: {
                 required: true
             }
         },
-        messages:{
-             course_fname:{
-                filetype:"图片只能是png,jpg"
+        messages: {
+            course_fname: {
+                filetype: "图片只能是png,jpg"
             },
-            course_descript:{
+            course_descript: {
                 required: "请填写对课程的详细描述"
+            }
+        }
+    });
+    $("#example").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            example: {
+                required: true
+            }
+        },
+        messages: {
+            example: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#join_rule").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            join_rule: {
+                required: true
+            }
+        },
+        messages: {
+            join_rule: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#exit_rule").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            exit_rule: {
+                required: true
+            }
+        },
+        messages: {
+            exit_rule: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#feedback").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            feedback: {
+                required: true
+            }
+        },
+        messages: {
+            feedback: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#certificate").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            certificate: {
+                required: true
+            }
+        },
+        messages: {
+            certificate: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#identi_education").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            identi_education: {
+                required: true
+            }
+        },
+        messages: {
+            identi_education: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#introduce").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            introduce: {
+                required: true
+            }
+        },
+        messages: {
+            introduce: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#identi_ID").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            identi_ID: {
+                required: true
+            }
+        },
+        messages: {
+            identi_ID: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#other").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            other: {
+                required: true
+            }
+        },
+        messages: {
+            other: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#itenti_professor").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            itenti_professor: {
+                required: true
+            }
+        },
+        messages: {
+            itenti_professor: {
+                required: "未填写信息"
+            }
+        }
+    });
+    $("#general").validate({
+        errorPlacement: function(error, element) {
+            $("#errorMesg").html(error);
+        },
+        rules: {
+            general: {
+                required: true
+            }
+        },
+        messages: {
+            general: {
+                required: "未填写信息"
             }
         }
     });
@@ -333,7 +516,7 @@ $(function() {
     $(".btn-submit").click(function() {
         errorModal($("form"));
     })
-    $("#save").click(function(){
-    	$('.btn-submit').trigger('click')
-		});
+    $("#save").click(function() {
+        $('.btn-submit').trigger('click')
+    });
 });
