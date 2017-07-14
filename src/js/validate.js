@@ -21,6 +21,10 @@ $(function() {
         var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
         return this.optional(element) || (length == 11 && mobile.test(value));
     });
+    $.validator.addMethod("isEmail", function(value, element, param) {
+        var checkEmail = /^\w+([\.-]*\w+)*@(\w+[-]*\w+\.)+\w+$/;
+        return this.optional(element) || (checkEmail.test(value));
+    });
     $("#login_form").validate({
         errorPlacement: function(error, element) {
             $("#errorMesg").html(error);
@@ -507,6 +511,7 @@ $(function() {
             }
         }
     });
+
     function errorModal(valid_form) {
         var valid = valid_form.valid();
         if (!valid) {
